@@ -1,0 +1,30 @@
+table 'netflix_data netflix_cast'
+	lineageTag: 5bf7b33d-40b0-4ddd-9155-2c0ac2729732
+
+	column show_id
+		dataType: string
+		lineageTag: 8da25c98-9c08-4f65-b5f1-0cf4556e085f
+		summarizeBy: none
+		sourceColumn: show_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column cast
+		dataType: string
+		lineageTag: e41cf881-d93c-48f4-801d-7a146750567e
+		summarizeBy: none
+		sourceColumn: cast
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'netflix_data netflix_cast' = m
+		mode: import
+		source =
+				let
+				    Source = MySQL.Database("127.0.0.1:3306", "netflix_data", [ReturnSingleDatabase=true]),
+				    netflix_data_netflix_cast = Source{[Schema="netflix_data",Item="netflix_cast"]}[Data]
+				in
+				    netflix_data_netflix_cast
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,30 @@
+table 'netflix_data description'
+	lineageTag: dfe03e23-37e2-4f6c-a671-1c529ee13bf2
+
+	column show_id
+		dataType: string
+		lineageTag: b7fe9ca8-3677-4ecc-bcb9-fab13433df69
+		summarizeBy: none
+		sourceColumn: show_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column description
+		dataType: string
+		lineageTag: ed774bc9-340a-41a8-a314-bda99b876789
+		summarizeBy: none
+		sourceColumn: description
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'netflix_data description' = m
+		mode: import
+		source =
+				let
+				    Source = MySQL.Database("127.0.0.1:3306", "netflix_data", [ReturnSingleDatabase=true]),
+				    netflix_data_description = Source{[Schema="netflix_data",Item="description"]}[Data]
+				in
+				    netflix_data_description
+
+	annotation PBI_ResultType = Table
+

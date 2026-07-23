@@ -1,0 +1,25 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-IN
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_QueryOrder = ["netflix_data countries_released","netflix_data description","netflix_data netflix_cast","netflix_data netflix_directors","netflix_data netflix_listed_in","netflix_data netflix_titles"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table 'netflix_data countries_released'
+ref table 'netflix_data description'
+ref table 'netflix_data netflix_cast'
+ref table 'netflix_data netflix_directors'
+ref table 'netflix_data netflix_listed_in'
+ref table 'netflix_data netflix_titles'
+ref table DateTableTemplate_e80b2a11-07f7-4530-bdf0-456cbfc9473c
+ref table LocalDateTable_d4e3d649-86a3-42db-9bde-9f18fa057a3b
+
+ref cultureInfo en-US
+

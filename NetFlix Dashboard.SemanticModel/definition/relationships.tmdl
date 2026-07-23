@@ -1,0 +1,27 @@
+relationship AutoDetected_f5ab7366-7320-4f41-b221-cc84d0d2afc8
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: 'netflix_data netflix_titles'.show_id
+	toColumn: 'netflix_data description'.show_id
+
+relationship ebb85270-167c-b43c-9653-4dba7ee00006
+	fromColumn: 'netflix_data countries_released'.show_id
+	toColumn: 'netflix_data netflix_titles'.show_id
+
+relationship ac3b293d-a87a-5db9-e03d-ed4258cbe1d8
+	fromColumn: 'netflix_data netflix_cast'.show_id
+	toColumn: 'netflix_data netflix_titles'.show_id
+
+relationship 9a5210ff-14cd-8fe0-ff62-c6680a52c8c5
+	fromColumn: 'netflix_data netflix_directors'.show_id
+	toColumn: 'netflix_data netflix_titles'.show_id
+
+relationship 9e589afe-c724-0d30-87f2-114522579007
+	fromColumn: 'netflix_data netflix_listed_in'.show_id
+	toColumn: 'netflix_data netflix_titles'.show_id
+
+relationship fb725bec-d061-4cfb-8955-00033396da80
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'netflix_data netflix_titles'.date_added
+	toColumn: LocalDateTable_d4e3d649-86a3-42db-9bde-9f18fa057a3b.Date
+

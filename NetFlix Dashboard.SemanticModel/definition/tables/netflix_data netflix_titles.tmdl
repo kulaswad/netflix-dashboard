@@ -1,0 +1,90 @@
+table 'netflix_data netflix_titles'
+	lineageTag: 0f3c7ffe-b300-430e-8465-cd656e9c65e9
+
+	column show_id
+		dataType: string
+		lineageTag: 38e988a0-0251-44e5-9bbf-6472bc227703
+		summarizeBy: none
+		sourceColumn: show_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column type
+		dataType: string
+		lineageTag: 305b00cc-7431-4d4c-a10c-4040a2984e5f
+		summarizeBy: none
+		sourceColumn: type
+
+		annotation SummarizationSetBy = Automatic
+
+	column title
+		dataType: string
+		lineageTag: d54fa57e-a105-4199-ad7b-c3ad25adb622
+		summarizeBy: none
+		sourceColumn: title
+
+		annotation SummarizationSetBy = Automatic
+
+	column date_added
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: d833844c-fa67-4099-99c3-a9e7dc747363
+		summarizeBy: none
+		sourceColumn: date_added
+
+		variation Variation
+			isDefault
+			relationship: fb725bec-d061-4cfb-8955-00033396da80
+			defaultHierarchy: LocalDateTable_d4e3d649-86a3-42db-9bde-9f18fa057a3b.'Date Hierarchy'
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column release_year
+		dataType: int64
+		formatString: 0
+		lineageTag: f3826bfe-1d9c-4868-b858-7b720d79d348
+		summarizeBy: sum
+		sourceColumn: release_year
+
+		annotation SummarizationSetBy = Automatic
+
+	column rating
+		dataType: string
+		lineageTag: 90e2ee93-275c-47a0-9e7b-3854c093ce17
+		summarizeBy: none
+		sourceColumn: rating
+
+		annotation SummarizationSetBy = Automatic
+
+	column duration
+		dataType: int64
+		formatString: 0
+		lineageTag: 13a0f33b-bd0b-4cd5-8ccd-a9bc7e0c7c62
+		summarizeBy: sum
+		sourceColumn: duration
+
+		annotation SummarizationSetBy = Automatic
+
+	column duration_type
+		dataType: string
+		lineageTag: cf3d6a55-1760-4f98-b8cc-743042269c7a
+		summarizeBy: none
+		sourceColumn: duration_type
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'netflix_data netflix_titles' = m
+		mode: import
+		source =
+				let
+				    Source = MySQL.Database("127.0.0.1:3306", "netflix_data", [ReturnSingleDatabase=true]),
+				    netflix_data_netflix_titles = Source{[Schema="netflix_data",Item="netflix_titles"]}[Data]
+				in
+				    netflix_data_netflix_titles
+
+	annotation PBI_ResultType = Table
+

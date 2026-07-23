@@ -1,0 +1,30 @@
+table 'netflix_data countries_released'
+	lineageTag: 72e22628-7b4f-45d4-9768-1f3e5378057e
+
+	column show_id
+		dataType: string
+		lineageTag: 129835fd-5b00-4934-99a1-f8dcaa0cbdff
+		summarizeBy: none
+		sourceColumn: show_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column country
+		dataType: string
+		lineageTag: 1f13349b-ec37-4db3-8bae-f3fbdc9d3d71
+		summarizeBy: none
+		sourceColumn: country
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'netflix_data countries_released' = m
+		mode: import
+		source =
+				let
+				    Source = MySQL.Database("127.0.0.1:3306", "netflix_data", [ReturnSingleDatabase=true]),
+				    netflix_data_countries_released = Source{[Schema="netflix_data",Item="countries_released"]}[Data]
+				in
+				    netflix_data_countries_released
+
+	annotation PBI_ResultType = Table
+

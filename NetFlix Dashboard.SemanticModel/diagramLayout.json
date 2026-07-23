@@ -1,0 +1,100 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 271.93733692458335,
+            "y": -50
+          },
+          "nodeIndex": "netflix_data countries_released",
+          "nodeLineageTag": "72e22628-7b4f-45d4-9768-1f3e5378057e",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 334.23813381906837,
+            "y": 206.42876753416436
+          },
+          "nodeIndex": "netflix_data description",
+          "nodeLineageTag": "dfe03e23-37e2-4f6c-a671-1c529ee13bf2",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 556.20612281944557,
+            "y": 28.271715895577358
+          },
+          "nodeIndex": "netflix_data netflix_cast",
+          "nodeLineageTag": "5bf7b33d-40b0-4ddd-9155-2c0ac2729732",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 50,
+            "y": 184.90294312901597
+          },
+          "nodeIndex": "netflix_data netflix_directors",
+          "nodeLineageTag": "b03eccbf-962c-44fc-b54c-8786e873d828",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 334.16069571566692,
+            "y": 512.87045843647491
+          },
+          "nodeIndex": "netflix_data netflix_listed_in",
+          "nodeLineageTag": "0240f962-291c-4a90-a85a-8ffb313e48be",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 618.42158305582677,
+            "y": 353.7470929119317
+          },
+          "nodeIndex": "netflix_data netflix_titles",
+          "nodeLineageTag": "c15afb7a-daa5-4b89-ade7-bdb14e7852e1",
+          "size": {
+            "height": 272,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "All tables",
+      "zoomValue": 79.553182037700765,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "All tables",
+  "defaultDiagram": "All tables"
+}
