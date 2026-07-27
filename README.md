@@ -1,73 +1,71 @@
-# Netflix Content Analysis Dashboard
-<img width="1237" height="745" alt="image" src="https://github.com/user-attachments/assets/64e0abb3-b89e-4ddf-8e92-8d3aeddc72bd" />
-<img width="1243" height="746" alt="image" src="https://github.com/user-attachments/assets/5d3c0369-fab2-4b40-a1f7-2def5c98bba8" />
+# 🍿 Product & Content Analytics: Netflix Strategy Dashboard
 
+## 📌 Overview
 
-This repository contains a Microsoft Power BI project that provides a comprehensive and interactive dashboard for analyzing the Netflix movie and TV show dataset. The dashboard offers insights into content trends, distribution, and details of individual titles.
+This project showcases my ability to analyze digital product catalogs and extract actionable insights for content strategy. I built an interactive **Power BI dashboard** analyzing Netflix’s global content library. By exploring trends in content formats, regional availability, and historical production data, this project translates raw catalog metadata into strategic intelligence for product and content operations teams.
 
-## Features
+## 🗂️ Project Highlights
 
-*   **Interactive Visualizations:** The dashboard is built with a variety of engaging charts and maps to explore the Netflix library.
-*   **Dual-View Analysis:** Two distinct report pages for different analytical purposes:
-    *   **Overview:** A high-level summary of content trends, including growth over time, genre popularity, rating distributions, and geographic availability.
-    *   **Single Title Drill-Down:** A detailed view for a specific movie or TV show, showing its cast, director, description, and more.
-*   **Structured Data Model:** Connects to a MySQL database, with a well-defined semantic model linking titles, cast, directors, genres, and countries.
+*   ✅ **Processed and cleaned** a comprehensive dataset of Netflix Movies and TV Shows.
+*   ✅ **Standardized temporal data** (e.g., release years vs. platform addition dates) to track catalog growth velocity.
+*   ✅ **Engineered custom DAX measures** to calculate the ratio of original content vs. licensed acquisitions.
+*   ✅ **Built an interactive Power BI dashboard** (`.pbip`) to visualize global content distribution and audience targeting metrics.
+*   ✅ **Solved real-world content strategy problems** (e.g., identifying gaps in regional localization and evaluating the pivot from movies to serialized TV shows).
 
-## Dashboard Pages
+## 📚 What I Learned from This Project
 
-### 1. Overview
+Through this Netflix project, I practiced thinking like a Product Manager focused on user retention and content acquisition. Here is what I focused on:
 
-The "Overview" page provides a macro-level view of the entire Netflix dataset. It helps in understanding broad trends and patterns.
+*   📌 **Data Cleaning & Transformation** – Handled missing values in director/cast arrays and standardized rating classifications for global audiences.
+*   🔍 **Product Strategy** – Analyzed the shift in platform strategy from licensing classic movies to producing original TV shows.
+*   📊 **Data Modeling** – Built a clean schema linking the main title catalog to dimension tables for genres, ratings, and countries.
+*   🪟 **Time-Series Analysis** – Mapped the volume of content added month-over-month to visualize seasonal release strategies.
 
-*   **Shows Added by Date:** An area chart visualizing the volume of content (Movies vs. TV Shows) added to the platform over the years.
-*   **Shows by Rating:** A column chart that breaks down the number of titles available for each content rating (e.g., TV-MA, PG-13).
-*   **Top 10 Genres:** A horizontal bar chart displaying the most common genres across the platform.
-*   **Countries Available:** A world map that visualizes the number of titles available in each country, with larger bubbles indicating a greater content library.
+## 📊 Power BI Dashboard – Netflix Content Strategy
 
-### 2. Single Title View
+To make the catalog data interactive and visually compelling, I designed a comprehensive Power BI dashboard. This tool provides a clear overview of the platform's content operations for non-technical stakeholders:
 
-This page allows you to dive deep into the specifics of any single title from the dataset.
+### 📸 Dashboard Preview
+*<img width="1237" height="745" alt="image" src="https://github.com/user-attachments/assets/64e0abb3-b89e-4ddf-8e92-8d3aeddc72bd" />
+<img width="1243" height="746" alt="image" src="https://github.com/user-attachments/assets/5d3c0369-fab2-4b40-a1f7-2def5c98bba8" />*
 
-*   **Title Selector:** A dropdown menu to search for and select a specific movie or TV show.
-*   **Key Metrics:** Informative cards display the selected title's **Release Year** and **Rating**.
-*   **Detailed Information:**
-    *   A card displays the full **Description** of the title.
-    *   Scrollable lists show the full **Cast**, **Director(s)**, and **Genres** (`Listed in`).
-*   **Countries Available:** A map highlights the specific countries where the selected title is available for streaming.
+### 🔍 Key Highlights:
+*   🎬 **Format Distribution:** Tracking the strategic ratio of Movies vs. TV Shows across the platform.
+*   🌍 **Geographic Localization:** Visualizing the top producing countries (e.g., US, India, UK) to assess regional market penetration.
+*   📈 **Catalog Growth Velocity:** A time-series analysis comparing the original release year against the date added to Netflix, highlighting the aggressive push for original content post-2015.
+*   👥 **Audience Targeting:** Breaking down the catalog by maturity ratings (e.g., TV-MA, PG-13) to understand the platform's core demographic focus.
+*   🎭 **Genre Saturation:** Identifying the most populated content categories (e.g., Documentaries, International Dramas) to spot potential niche opportunities.
 
-## Technical Details
+> 📁 You can find the unpacked Power BI Project files (`.pbip`), raw dataset (`.csv`), and dashboard screenshots in this repository.
 
-*   **Tool:** Microsoft Power BI Desktop
-*   **Project Format:** Power BI Project (`.pbip`)
-*   **Data Source:** The semantic model is configured to connect to a local MySQL database (`127.0.0.1:3306`) named `netflix_data`.
+## 🛠️ Tools Used
 
-### Data Model
+*   **Power BI** (Data Modeling, DAX, Visualization)
+*   **Power Query** (ETL and Data Cleaning)
+*   **Microsoft Excel / CSV** (Raw data handling)
 
-The dashboard is powered by a semantic model consisting of the following tables, linked primarily by `show_id`:
-*   `netflix_titles`: The main table containing core information like title, type, release year, and rating.
-*   `netflix_cast`: Links titles to their cast members.
-*   `netflix_directors`: Links titles to their directors.
-*   `netflix_listed_in`: Contains the genre classifications for each title.
-*   `countries_released`: Maps titles to the countries where they are available.
-*   `description`: Contains the plot summary for each title.
+## 🚀 How to Use This Project
 
-## How to Use
+1.  **Clone the repo** or download the files.
+2.  **Explore the Raw Data:** Review the `/data` folder to see the initial state of the CSV file.
+3.  **Visualize:** Open the `.pbip` file using Power BI Desktop.
+4.  **Interact:** Use the built-in slicers (e.g., by Year, Format, or Rating) to dynamically filter the global catalog and explore regional content strategies.
 
-1.  **Prerequisites:**
-    *   **Power BI Desktop:** Ensure you have a recent version installed.
-    *   **MySQL Database:** Set up a local or remote MySQL server with the `netflix_data` database and the corresponding tables. The original dataset can be found on platforms like Kaggle.
-2.  **Clone the Repository:**
-    ```bash
-    git clone https://github.com/kulaswad/netflix-dashboard.git
-    ```
-3.  **Open the Project:**
-    *   Navigate to the cloned directory.
-    *   Open the `NetFlix Dashboard.pbip` file with Power BI Desktop.
-4.  **Configure Data Source:**
-    *   Once the project is open, you will likely be prompted to configure the data source connection.
-    *   Go to `Transform data` -> `Data source settings`.
-    *   Select the MySQL data source and click `Change Source...`.
-    *   Update the Server and Database details to match your MySQL setup.
-    *   Provide the necessary credentials to connect.
-5.  **Refresh Data:**
-    *   After configuring the connection, click the **Refresh** button on the Home ribbon in Power BI Desktop to load the data from your database into the model.
+## 💡 Key Business Questions Answered
+
+*   🛒 **Content Acquisition:** Is Netflix investing more heavily in acquiring independent movies or producing multi-season TV shows?
+*   🌍 **Global Expansion:** Which international markets are producing the highest volume of localized content for the platform?
+*   ⚠️ **Catalog Aging:** What is the average age of a movie when it is added to the platform, and how has that changed over the last decade?
+*   🎯 **Demographic Strategy:** How does the maturity rating distribution shift depending on the producing country?
+
+## ✅ Conclusion
+
+This project allowed me to step into the shoes of a content operations analyst. By utilizing Power BI and Power Query, I transformed a massive, unorganized list of media titles into a strategic dashboard that clearly communicates Netflix's aggressive global expansion and shift toward original, serialized content. It thoroughly strengthened my ability to handle string manipulations, date/time intelligence, and visual storytelling.
+
+## ⚠️ Disclaimer
+
+This project uses a publicly available Netflix catalog dataset. It is purely academic and created for portfolio and learning purposes. All insights are based on a historical snapshot of the data and do not reflect current, confidential Netflix business operations or strategy. 
+
+## 👩‍💻 About Me
+
+I’m Aswad Kulkarni, a pre-final year Integrated B.Tech (IT) and MBA student at ABV-IIITM Gwalior. I am actively exploring opportunities in **Product Analytics, Data Analytics, and Business Operations**. This project allowed me to practically apply the data visualization and product strategy skills I’ve been mastering independently to a complete, end-to-end digital product scenario, demonstrating my ability to translate raw operational data into strategic business narratives.
